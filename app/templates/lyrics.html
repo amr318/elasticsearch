@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Elasticsearch lyrics.csv</h1>
+    <form action="/lyrics" method="POST">
+        <input type="text" name="search_terms">
+        <input type="submit" name="search" value="Search">
+    </form>
+    {% if thumbnail_info %}
+        <h1>Results</h1>
+        {% for song, artist, snippet, id in thumbnail_info %}
+            <p><a href="/lyrics/{{ id }}"><b>{{ loop.index }}) {{ song }}, {{ artist }}</b></a></p>
+            <p>{{ snippet }} ...</p>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

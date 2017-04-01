@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if song %}
+        <h1><b>Artist: {{ artist }}</b></h1>
+        <h2><b>Song: {{ song }}</b></h2>
+        <p>Year: {{ year }}</p>
+        <p>Rank: {{ rank }}</p>
+        <hr>
+        <p> {{ lyrics }}</p>
+    {% endif %}
+{% endblock %}
